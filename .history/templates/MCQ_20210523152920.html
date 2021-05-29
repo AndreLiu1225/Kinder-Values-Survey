@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<div class="form-wrapper">
+    <h2 class="title">Survey for values</h2>
+
+    <form method="POST" action="{{ url_for('values_quiz') }}">
+
+        <fieldset class="form-field">
+            {{ form.age.label }}
+            {{ form.age }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.profession.label }}
+            {{ form.email }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.power.label }}
+            {{ form.power }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.tradition.label }}
+            {{ form.tradition }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.achievement.label }}
+            {{ form.achievement }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.stimulation.label }}
+            {{ form.stimulation }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.hedonism.label }}
+            {{ form.hedonism }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.conformity.label }}
+            {{ form.conformity }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.self_direction.label }}
+            {{ form.self_direction }}
+        </fieldset>
+
+        {{ form.submit }}
+
+    </form>
+  </div>
+</html>

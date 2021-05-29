@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+<div class="container">
+<div class="form-wrapper">
+    <h2 class="title">Survey for values</h2>
+
+    <form method="POST" action="{{ url_for('values_quiz') }}">
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.age.label(class="form-control-label") }}
+                        {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.profession.label(class="form-control-label") }}
+                        {% if form.profession.errors %}
+                        {{ form.profession(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.profession.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.profession(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.power.label(class="form-control-label") }}
+                        {% if form.power.errors %}
+                        {{ form.power(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.power.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.power(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.tradition.label(class="form-control-label") }}
+                        {% if form.tradition.errors %}
+                        {{ form.tradition(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.tradition.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.tradition(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.achievement.label(class="form-control-label") }}
+                        {% if form.achievement.errors %}
+                        {{ form.achievement(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.achievement.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.achievement(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.stimulation.label(class="form-control-label") }}
+                        {% if form.stimulation.errors %}
+                        {{ form.stimulation(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.stimulation.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.stimulation(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.hedonism.label(class="form-control-label") }}
+                        {% if form.hedonism.errors %}
+                        {{ form.age(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hedonism.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.hedonism(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.conformity.label(class="form-control-label") }}
+                        {% if form.conformity.errors %}
+                        {{ form.conformity(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.conformity.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.conformity(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <fieldset class="form-field">
+                        {{ form.self_direction.label(class="form-control-label") }}
+                        {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+
+        {{ form.submit }}
+
+    </form>
+  </div>
+  </div>
+   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </head>
+    <div class="content-section">
+        <div class="row">
+            <div class="col-md-8">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bttom mb-4">Survey Questions</legend>
+                <div class="'form-group">
+                    {{ form.age.label(class="form-control-label") }}
+                    {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for errors in form.age.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.profession.label(class="form-control-label") }}
+                    {% if form.profession.errors %}
+                        {{ form.profession(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for errors in form.profession.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.profession(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.power.label(class="form-control-label") }}
+                    {% if form.power.errors %}
+                        {{ form.power(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for errors in form.power.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.power(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.tradition.label(class="form-control-label") }}
+                    {% if form.tradition.errors %}
+                        {{ form.tradition(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for errors in form.tradition.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.tradition(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.achievement.label(class="form-control-label") }}
+                    {% if form.achievement.errors %}
+                        {{ form.achievement(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for errors in form.achievement.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.achievement(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+        </form>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend class="border-bttom mb-4">Survey Questions</legend>
+        <div class="'form-group">
+            {{ form.age.label(class="form-control-label") }}
+            {% if form.age.errors %}
+                {{ form.age(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for errors in form.age.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.age(class="")}}
+        </div>
+    </fieldset>
+</form>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend class="border-bttom mb-4">Survey Questions</legend>
+        <div class="'form-group">
+            {{ form.age.label(class="form-control-label") }}
+            {% if form.age.errors %}
+                {{ form.age(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for errors in form.age.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.age(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.profession.label(class="form-control-label") }}
+            {% if form.profession.errors %}
+                {{ form.profession(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for errors in form.profession.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.profession(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+        <div>
+            {{ form.power.label(class="form-control-label") }}
+            {% if form.power.errors %}
+                {{ form.power(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for errors in form.power.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.profession(class="form-control form-control-lg") }}
+            {% endif %}
+        </div>
+    </fieldset>
+</form>
+</html>

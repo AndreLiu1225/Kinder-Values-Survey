@@ -1,0 +1,39 @@
+<div class="form-wrapper">
+    <h2 class="title">Survey for values</h2>
+
+    <form method="POST" action="{{ url_for('values_quiz') }}">
+
+        <fieldset class="form-field">
+            {{ form.age.label }}
+            {{ form.name(size=20) }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.profession.label }}
+            {{ form.email }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.power.label }}
+            {{ form.power }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.tradition.label }}
+            {{ form.tradition }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.achievement.label }}
+            {{ form.achievement }}
+        </fieldset>
+
+        <fieldset class="form-field">
+            {{ form.stimulation.label }}
+            {{ form.stimulation }}
+        </fieldset>
+
+        {{ form.submit }}
+
+    </form>
+  </div>
