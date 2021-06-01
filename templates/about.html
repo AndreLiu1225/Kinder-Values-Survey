@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta email="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<div class="container">
+    <div class="form-wrapper">
+        <header class="site-header">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              <div class="container">
+                <a class="navbar-brand mr-4" href="/">Kinder-Values</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                  <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Home</a>
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+                  </div>
+                  <!-- Navbar Right Side -->
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="{{ url_for('video') }}">Video</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </header>
+        </div>
+    </div>
+<body>
+    <div class="about-section">
+        <h1>About Us</h1>
+        <P>We are a group of students from various Pre-University institutions who have 
+           come together to create this interactive board for the Pre-U Seminar 2021 hosted by Eunoia JC. </P>
+    </div>
+
+    <h2 style="text-align:center">Our vision</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Our Focus</h2>
+                    <p class="title">Inspiration</p>
+                    <p>Our team’s focus is on values so we have taken inspiration from Schwartz theory of basic values where there are ten basic 
+                        personal values: Self-Direction, Stimulation, Hedonism, Achievement, Power, Security, Conformity, Tradition, Benevolence and Universalism.</p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Our Process</h2>
+                    <p class="title">How we got here</p>
+                    <p>As everything starts to move online due to the pandemic, we decided to ride on this new wave, with this online website being a part of our 
+                       project. This site would also serve to remind us of the uniqueness of this experience for years to come. This website was built using the flask framework</p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <div class="container">
+                    <h2>Future Plans</h2>
+                    <p class="title">Ideas</p>
+                    <p>We plan to get more survey responses and a larger sample size. We have a database set up that records all of the survey responses. After getting more
+                       responses, we will be able to gauge what basic values Singaporeans have in common.
+                    </p>
+                </div>
+            </div>    
+        </div>
+    </div>
+</body>
