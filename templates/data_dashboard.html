@@ -24,33 +24,17 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="/">Home</a>
-                        <a class="nav-item nav-link" href="/about">About</a>
+                        <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Home</a>
+                        <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="/Team">Team</a>
-                        <a class="nav-item nav-link" href="/Video">Video</a>
+                        <a class="nav-item nav-link" href="{{ url_for('video') }}">Video</a>
                     </div>
                     </div>
                 </div>
                 </nav>
                 </header>
-                <main role="main" class="container">
-                    <div class="row">
-                        <div class="col-md-8">
-                            {% with messages = get_flashed_messages(with_categories=true) %}
-                                {% if messages %}
-                                    {% for category, message in messages %}
-                                        <div class="alert alert-{{ category }}">
-                                            {{ message }}
-                                        </div>
-                                    {% endfor %}
-                                {% endif %}
-                            {% endwith %}
-                        </div>
-                    </div>
-                </main>
             </div>
         </div>
         </div>
@@ -62,4 +46,34 @@
         Plotly.plot('barchart', fig.data, fig.layout, {displaylogo: false});
         </script>
     </div>
+    <article class="results">
+    <h1>Dynamic values results</h1>
+    <article class="dyn-values">
+        <h2>Openness to Change</h2>
+        <p>Relations among these 10 broad personal values are dynamic. Actions pursuing one value "have"
+        consequences that conflict with some values but are congrugent with others. For openness to change, it is 
+        determined by the basic values self-direction, stimulation and hedonism. If you have answered highly for these
+        3 values, this shows your emphasis on independence of thought, action and feelings and readiness for change.
+        </p>
+    </article>
+    <article class="dyn-values">
+        <h2>Conservation</h2>
+        <p>Conservation values are constrast to values of the former. Conservation is determined by the basic values conformity,
+        tradition and security. This dimension emphasis order, self-restriction for stability and preservation of the past, 
+        and resistance to change.
+        </p>
+    </article>
+    <article class="dyn-values">
+        <h2>Self-Transcendence</h2>
+        <p>Self-Transcendence values consist of universalism and benevolence, showing a strong emphasis on concern for the welfare
+           and interests of others. Which is a polar opposite of the next dimension below, self-enhancement.
+        </p>
+    </article>
+    <article class="dyn-values">
+        <h2>Self-Enhancement</h2>
+        <p>Self-Enhancement values are in direct conflict with self-transendence values. With a stronger emphasis on the pursuit of
+           one's own interests and relative success and dominance over others. It is defined by the basic values of power and achievement.
+        </p>
+    </article>
+</article>
 </html>
