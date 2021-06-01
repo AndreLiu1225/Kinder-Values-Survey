@@ -106,6 +106,14 @@ def values_quiz():
         flash('Ensure all questions are answered correctly', 'warning')
     return render_template('MCQ.html', form=form)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/video')
+def video():
+    return render_template('video.html')
+
 @app.route('/results', methods=['GET', 'POST'])
 def data_dashboard():
     return render_template('data_dashboard.html', image=plt.show())
