@@ -13,7 +13,19 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-newspaper-o, .fa-coffee, .fa-users{font-size:200px}
+</style>
+<body>
+</style>
 <div class="container">
     <div class="form-wrapper">
         <header class="site-header">
@@ -25,8 +37,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                   <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Home</a>
-                    <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+                    <a class="nav-item nav-link" href="{{ url_for('about') }}">Home</a>
+                    <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Survey</a>
                   </div>
                   <!-- Navbar Right Side -->
                   <div class="navbar-nav">
@@ -39,46 +51,97 @@
         </div>
     </div>
 <body>
-    <div class="about-section">
-        <h1>About Us</h1>
-        <P>We are a group of students from various Pre-University institutions who have 
-           come together to create this interactive board for the Pre-U Seminar 2021 hosted by Eunoia JC. </P>
-    </div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo">TAKE THE SURVEY</h1>
+    <p class="w3-xlarge">Schwartz's Theory of Basic Values Survey</p>
+    <a href="{{ url_for('values_quiz') }}"><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button></a>
+</header>
 
-    <h2 style="text-align:center">Our vision</h2>
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <div class="container">
-                    <h2>Our Focus</h2>
-                    <p class="title">Inspiration</p>
-                    <p>Our team’s focus is on values so we have taken inspiration from Schwartz theory of basic values where there are ten basic 
-                        personal values: Self-Direction, Stimulation, Hedonism, Achievement, Power, Security, Conformity, Tradition, Benevolence and Universalism.</p>
-                </div>
-            </div>    
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <div class="container">
-                    <h2>Our Process</h2>
-                    <p class="title">How we got here</p>
-                    <p>As everything starts to move online due to the pandemic, we decided to ride on this new wave, with this online website being a part of our 
-                       project. This site would also serve to remind us of the uniqueness of this experience for years to come. This website was built using the flask framework</p>
-                </div>
-            </div>    
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <div class="container">
-                    <h2>Future Plans</h2>
-                    <p class="title">Ideas</p>
-                    <p>We plan to get more survey responses and a larger sample size. We have a database set up that records all of the survey responses. After getting more
-                       responses, we will be able to gauge what basic values Singaporeans have in common.
-                    </p>
-                </div>
-            </div>    
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>About this survey</h1>
+            <h5 class="w3-padding-32">This survey was inspired by the Schwartz's theory of basic values where the 10 basic values are: Self-Direction, Stimulation,
+                Hedonism, Achievement, Power, Security, Conformity, Tradition, Benevolence and Universalism. According to Schwartz, these values are cherished by 
+                people of all cultures and can be hekped to explain diversity and conflict in values. After taking this survey, we will be able to measure your scores
+                on these human values and categorize you into 4 dimensions, Openness to Change, Self-Transcendence, Conservation and Self-Enhancement.
+            </h5>
+            <p class="w3-text-grey">More information about the Schwartz's theory of basic values can be found in this link: <a class="link" href="https://i2s.anu.edu.au/resources/schwartz-theory-basic-values">https://i2s.anu.edu.au/resources/schwartz-theory-basic-values</a></p>
+            </div>
+            <div class="w3-third w3-center">
+                <i class="fa fa-newspaper-o w3-text-red"></i>
+              </div>
+            </div>
         </div>
     </div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      </div>
+  
+      <div class="w3-twothird">
+        <h1>Our focus</h1>
+        <h5 class="w3-padding-32">We have created an interactive website to facilitate an exploration into what basic values most Singaporeans hold. That way, we are
+            able to realize the values that shape Singaporean society. On a smaller scale, we would want you to find out and reflect on the values you hold dear, so that 
+            you are able to better understand your principles.
+        </h5>
+  
+        <p class="w3-text-grey"></p>
+      </div>
+    </div>
+  </div>  
+
+<!-- Third Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>About us</h1>
+            <h5 class="w3-padding-32">We are a group of students from various Pre-University institutions who have come together for the Pre-U Seminar 2021 hosted by Eunoia JC. 
+                Our group belongs to the “Kinder” sub-theme, with a focus on values. Our team members hail from Raffles Institution, ACS International and Catholic Junior College.
+            </h5>
+            <p class="w3-text-grey">More information about the Pre-U Seminar can be found in this lin: <a class="link" href="https://eunoiajc.moe.edu.sg/stronger/">https://eunoiajc.moe.edu.sg/stronger/</a></p>
+            </div>
+            <div class="w3-third w3-center">
+                <i class="fa fa-users w3-padding-64 w3-text-red"></i>
+              </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-third w3-center">
+        <i class="w3-margin-right"><img src="{{ url_for('static', filename='logo.png') }}" width="200" height="200"></i>
+      </div>
+  
+      <div class="w3-twothird">
+        <h1>Our logo</h1>
+        <h5 class="w3-padding-32">Purple represents Power(Social status and prestige, control or dominance over people and resources)<br>
+            Red represents Achievement (Personal success through demonstrating competence according to social standards.)<br>
+            Yellow represents Conformity (Restraint of actions, inclinations, and impulses likely to upset or harm others and violate social expectations or norms)
+            Orange represents Stimulation (Seeks excitement, novelty and challenge in life.)<br>
+            Blue represents Security (Prioritising safety, harmony. Pursue stability, whether of society, relationships or oneself.)<br>
+            Light Purple represents Hedonism (Pleasure or sensuous gratification for oneself.)<br>
+            Pink represents Benevolence (Preserving and enhancing the welfare of those with whom one is in frequent personal contact (your inner circle))<br>
+            Green represents Self-Direction (Independent thought and action–choosing, creating, exploring.)<br>
+            Brown represents Tradition (Respect, commitment, and acceptance of the customs and ideas that one’s culture or religion provides.)<br>
+            Grey represents Universalism (Seeks to understand, appreciate and tolerate others. Protects welfare for all people and nature.)
+        </h5>
+  
+        <p class="w3-text-grey"></p>
+      </div>
+    </div>
+  </div>  
+
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day:  A man got to have a code<br> 
+        ~Omar Little</h1>
+</div>
 </body>

@@ -24,8 +24,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Home</a>
-                        <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+                        <a class="nav-item nav-link" href="{{ url_for('about') }}">Home</a>
+                        <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Survey</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
@@ -35,6 +35,21 @@
                 </div>
                 </nav>
                 </header>
+                <main role="main" class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }}">
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                </main>
             </div>
         </div>
         </div>
@@ -53,26 +68,63 @@
         <p>Relations among these 10 broad personal values are dynamic. Actions pursuing one value "have"
         consequences that conflict with some values but are congrugent with others. For openness to change, it is 
         determined by the basic values self-direction, stimulation and hedonism. If you have answered highly for these
-        3 values, this shows your emphasis on independence of thought, action and feelings and readiness for change.
+        3 values, this shows your emphasis on independence of thought, action and feelings and readiness for change.<br>
+
+        Basic values: Self-Direction, Stimulation and Hedonism<br>
+
+        How can one display this?: By caring deeply about something and having a purpose to improve it. Usually, an individual with
+        this trait would be tenacious to contribute to society and enjoy overcoming the challenges in order to achieve one's purpose.
+        He/She will also display independent thinking and action.<br>
+
+        How you can act on this value: Have the courage to involve yourselves in projects that resonate with you, even if they challenge the status quo or social norms.
         </p>
     </article>
     <article class="dyn-values">
         <h2>Conservation</h2>
         <p>Conservation values are constrast to values of the former. Conservation is determined by the basic values conformity,
         tradition and security. This dimension emphasis order, self-restriction for stability and preservation of the past, 
-        and resistance to change.
+        and resistance to change.<br>
+
+        Basic values: Tradition, Conformity and Security:<br>
+
+        How can one display this?: An individual who fall under this dimension will score highly on the basic values: Conformity, Tradition and Security.
+        This means that an individual will respect and follow the immutable espectations of traditional values from the past. They are likely to 
+        restraint themselves from going against the social norms for the sake of stability which may come under risk during periods of change.<br>
+
+        How can one act on this value: On your next trip out with your friends and family, visit cultural heritage museums and sites(Peranakan Museum, 
+        National Museum, Kampong Glam), don’t be afraid to learn more about the cultural heritage of others as well
         </p>
     </article>
     <article class="dyn-values">
         <h2>Self-Transcendence</h2>
         <p>Self-Transcendence values consist of universalism and benevolence, showing a strong emphasis on concern for the welfare
-           and interests of others. Which is a polar opposite of the next dimension below, self-enhancement.
+           and interests of others. Which is a polar opposite of the next dimension below, self-enhancement.<br>
+
+           Basic values: Universalism and Benevolence<br>
+        
+           How can one display this?: An individual will place the welfare and interests of others above all. This sort of selfless behavior can be seen in organisations
+           such as the Yellow Ribbon Project - prison officers and volunteers have shown that they are committed to acting in the interests of inmates/ ex-offenders, 
+           making the effort to get to know them when they are in prison, and to give them the best shot at life after their release<br>
+
+           How can one act on this value: take the initiative to talk to your neighbours; for workers in non-profit organisations, rather than jumping into doing what you think is good for the 
+           beneficiaries, we can put more effort and thought into really understanding their needs
         </p>
     </article>
     <article class="dyn-values">
         <h2>Self-Enhancement</h2>
         <p>Self-Enhancement values are in direct conflict with self-transendence values. With a stronger emphasis on the pursuit of
-           one's own interests and relative success and dominance over others. It is defined by the basic values of power and achievement.
+           one's own interests and relative success and dominance over others. It is defined by the basic values of power and achievement.<br>
+
+           Basic values: Power and Achievement<br>
+
+           How can one display this?: An individual would have a high interest in obtaining social superiority and a higher self-esteem. This motive becomes especially prominent
+           in situations of threat, failure or blows to one's self-esteem. This particular individual will try and work towards rebuilding their self-esteem and asserting dominance
+           over others.<br>
+
+           How can one act on this value?: No matter what position you belong society, use this aggressive threat to your advantage and never fail to improve oneself and become 
+           a even more productive member of society. However, don't forget to reflect on the various factors that have contributed to your current achievements, and remember to 
+           give back to the society that helped you get where you are, and use your position of privilege for good to pay it forward! This can be through volunteering your time 
+           teaching children from low-income backgrounds, or visiting the old folks home regularly.            
         </p>
     </article>
 </article>
