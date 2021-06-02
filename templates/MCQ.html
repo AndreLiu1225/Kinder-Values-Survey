@@ -22,15 +22,14 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
-              <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link" href="/">Home</a>
-                <a class="nav-item nav-link" href="/about">About</a>
-              </div>
-              <!-- Navbar Right Side -->
-              <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/Team">Team</a>
-                <a class="nav-item nav-link" href="/Video">Video</a>
-              </div>
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{{ url_for('values_quiz') }}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="{{ url_for('video') }}">Video</a>
+            </div>
             </div>
           </div>
         </nav>
