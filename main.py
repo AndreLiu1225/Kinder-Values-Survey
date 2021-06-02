@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from flask_mail import Mail, Message
 from wtforms import StringField, TextField, SubmitField, IntegerField, SelectField, RadioField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 import datetime
