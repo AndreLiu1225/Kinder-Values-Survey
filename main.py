@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
+from flask_mail import Mail, Message
 from wtforms import StringField, TextField, SubmitField, IntegerField, SelectField, RadioField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, ValidationError
 import datetime
@@ -40,22 +41,22 @@ class MCQ(FlaskForm):
     age = IntegerField("Please enter your age", validators=[DataRequired()])
     profession = StringField("What is your profession?", validators=[DataRequired(), Length(max=30)])
     # Self-Enhancement
-    power = IntegerField("Do you desire a higher social status and dominance over others? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
-    hedonism = IntegerField("Is personal gratification the most important? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
-    achievement = IntegerField("Is achievement according to social standards important? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
+    power = IntegerField("My social status is important to me.", validators=[DataRequired()])
+    hedonism = IntegerField("Personal gratification is important to me.", validators=[DataRequired()])
+    achievement = IntegerField("I evaluate my achievements based on traditional social standards. e.g. Salary or position in a company", validators=[DataRequired()])
     # Conservation
-    tradition = IntegerField("Do you care about preserving traditions? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
-    conformity = IntegerField("Do you think restraint of actions against social norms is important? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
-    security = IntegerField("Do you value safety, harmony and stability of society, of relationships, and of self? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
+    tradition = IntegerField("Preserving traditions is important to me.", validators=[DataRequired()])
+    conformity = IntegerField("Restraint of actions against social norms is important to me.", validators=[DataRequired()])
+    security = IntegerField("Safety, harmony and stability of society, relationships and self are important to me.", validators=[DataRequired()])
     # Openness to change
-    stimulation = IntegerField("Do you prefer novel and exciting challenges in life? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])  
-    self_direction = IntegerField("Do you think independent thought and action are important (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
+    stimulation = IntegerField("I value novel and exciting challenges in life.", validators=[DataRequired()])  
+    self_direction = IntegerField("I value independent thought and action.", validators=[DataRequired()])
     # Self-transcendence
-    benevolence = IntegerField("Are preserving and enhancing the welfare of your friends and family the most important? (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
-    universalism = IntegerField("I find it important to understand, tolerate, appreciate and protect all ethnicities and people. (4- It is my utmost priority, 3-It is important, 2-Doesn't bother me, 1-Not even a thought)", validators=[DataRequired()])
+    benevolence = IntegerField("Enhancing the welfare of my friends and family is important to me.", validators=[DataRequired()])
+    universalism = IntegerField("Understanding, tolerating, appreciating and protecting people across all ethnicities is important to me.", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/survey', methods=['POST','GET'])
 def values_quiz():
     form = MCQ()
     if form.validate_on_submit():
@@ -96,6 +97,7 @@ def values_quiz():
 
         sum_v = [open_sum, enhance_sum, trans_sum, cons_sum]
 
+
         trace1 = go.Bar(x=values_labels, y=sum_v)
         layout = go.Layout(title="Plot of dynamic values", xaxis=dict(title="Dynamic value types"), yaxis=dict(title="Percentages"))
         data = [trace1]
@@ -106,7 +108,7 @@ def values_quiz():
         flash('Ensure all questions are answered correctly', 'warning')
     return render_template('MCQ.html', form=form)
 
-@app.route('/about')
+@app.route('/')
 def about():
     return render_template('about.html')
 
